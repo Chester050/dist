@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="css/JS_Practice_1.css" type="text/css">
+  </head>
+  <body>
+
+
+    <nav class="navBar">
+      <img src="C:\\Users\\chest\\OneDrive\\Desktop\\Javascript\\Image\\adventure_BG.jpg" class="toggle-image" width="50px" height="50px" alt="">
+
+
+      <ul class="list-group">
+
+
+     <a href="#" class="list-link" id="home"> Home  </a>
+       <a href="#" class="list-link"> About   </a>
+      <a href="#" class="list-link"> Login  </a>
+
+      <input type="text" name="" value="">
+
+      <button type="button" onclick="clear()" id="clearBtn" name="button"> Clear</button>
+
+      </ul>
+
+
+      <form class="itemForm">
+      <ol class="unorderedList">
+
+      </ol>
+
+      <input type="submit" name="" value="Submit">
+
+    </form>
+
+
+    </nav>
+
+        <button type="button" id="addList" name="button"> Add </button>
+
+    <aside class="nav-sideBar">
+      <li> <a href="#"> Where  </a> </li>
+      <li>  <a href="#" class="when"> When   </a> </li>
+      <li>  <a href="#" id="why"> Why  </a> </li>
+
+
+    </aside>
+
+    <h1 class="amount"></h1>
+
+
+        <h3 class="output"></h3>
+
+      <div style="width:400px;height:300px;background:yellow;" id="box">
+
+      </div>
+
+
+      <h1 class="amountText"></h1>
+
+    <script type="text/javascript">
+
+  var unList = document.querySelector('.unorderedList');
+
+  var itemForm = document.querySelector('.itemForm');
+
+    var list = document.querySelector('.list-link');
+
+    var allList = document.querySelectorAll('.list-link');
+
+    var listGroup = document.querySelector('.list-group');
+
+    var navbar = document.querySelector('.navBar');
+
+    var link = document.querySelector('li');
+
+    var amountText = document.querySelector('.amountText');
+
+    var box = document.querySelector('#box');
+
+    var input = document.querySelector('input[type="text"]');
+
+    var h1 = document.createElement('h1');
+
+    var clearBtn = document.querySelector("#clearBtn");
+
+    var addList = document.getElementById("addList");
+
+
+      var amountText = document.querySelector('.amount');
+
+
+    var amount = 0;
+
+
+      // ITEM FORM
+      itemForm.addEventListener('submit', function(e){
+
+      e.preventDefault();
+
+        amountText.innerHTML = amount += 1;
+      var newBtn = document.createElement('button');
+
+      var newLink = document.createElement('li');
+
+
+      newBtn.appendChild(document.createTextNode('X'));
+
+      newBtn.className = "deleteBtn";
+
+      newLink.className = "list-link";
+
+        newLink.appendChild(document.createTextNode(input.value + " "));
+
+        newLink.appendChild(newBtn);
+
+        unList.appendChild(newLink);
+
+        newBtn.addEventListener('click', function(e){
+          unList.removeChild(newLink);
+            amountText.innerHTML = amount -= 1;
+
+        })
+
+        console.log(unList);
+        console.log(newLink);
+
+    });
+
+
+
+
+
+
+
+
+    clearBtn.addEventListener('click', function(){
+      console.log(1);
+
+      var a = document.querySelector('.list-link');
+
+      unList.removeChild(document.querySelector('li'));
+
+      h1.innerHTML = null;
+
+      input.value = null;
+
+    });
+
+    input.addEventListener("keyup", theEvent);
+
+    function theEvent(e){
+      console.log(input.value);
+    }
+
+
+
+
+
+
+
+
+    box.addEventListener('mouseenter', runEvent);
+
+    box.addEventListener('mouseleave', runEvent1);
+
+    box.addEventListener('mousedown', runEvent2);
+
+    box.addEventListener('mouseup', runEvent3);
+
+
+    function runEvent(event){
+
+    box.style.backgroundColor = "red";
+
+  };
+
+    function runEvent1() {
+      box.style.backgroundColor = "yellow";
+    }
+
+    function runEvent2(event){
+
+      box.style.backgroundColor = "grey";
+
+      }
+
+      function runEvent3(event){
+
+        box.style.backgroundColor = "blue";
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+
+
+
+
+
+.navBar{
+  width:100%;
+  display:flex;
+  float:right;
+  flex-wrap: wrap;
+}
+
+li{
+  display:inline;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+.nav-sideBar a{
+display:block;
+width:50px;
+
+
+}
